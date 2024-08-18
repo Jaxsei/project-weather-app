@@ -1,0 +1,853 @@
+:root {
+  --madurai: "Hindu Madurai";
+  --palanquin: "Palanquin Dark";
+  --fira-sans: "Fira Sans";
+  --karma: "Karma";
+  --gradient-black: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  color: black;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 8px 10px;
+  background-color: black;
+  color: white;
+  background: black;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(7px);
+  top: 10px;
+  border-radius: 16px;
+  left: 130px;
+  width: 80%;
+  z-index: 1000;
+}
+
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  margin: 0 10px;
+}
+
+.navbar-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.navbar-brand img {
+  width: 30px;
+  height: 30px;
+  transition: 100ms;
+}
+
+.navbar-brand img:hover {
+  transform: translateY(-10px);
+}
+
+.navbar-menu a:hover {
+  text-decoration: underline;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar-toggle .bar {
+  background-color: white;
+  height: 3px;
+  width: 25px;
+  margin: 3px 0;
+}
+
+.navbar-menu img {
+  width: 30x;
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+
+.date-switcher h1 {
+  font-size: 1.1rem;
+  position: absolute;
+  top: -0px;
+  left: 540px;
+}
+
+.date-switcher img {
+  transition: 100ms;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 15px;
+  left: 420px;
+  width: 30x;
+  height: 30px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 15px;
+  left: 780px;
+  width: 30x;
+  height: 30px;
+}
+
+.date-switcher img:active {
+  transform: translateY(-5px);
+  scale: 1;
+}
+
+body {
+  margin: 0;
+  padding: 30px;
+  height: 100vh;
+  display: flex;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  /* Places the video behind your content */
+}
+
+.video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 140px;
+  color: white;
+  z-index: 1;
+  position: relative;
+  top: 60px;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  max-width: 1200px;
+}
+
+@keyframes arrive {
+  from {
+    transform: translateY(-300px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.cards {
+  position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+  font-family: var(--Palanquin);
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(7px);
+  text-align: center;
+  box-shadow: 3px 3px 3px rgb(0, 0, 0, 0.567);
+  border-radius: 20px;
+  width: 500px;
+  max-width: 430px;
+  height: 600px;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  /*animation: arrive 1000ms linear;*/
+}
+
+.box2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.search-box {
+  padding: 18px 50px;
+  margin-left: 0;
+  outline: 0;
+  border: none;
+  border-radius: 26px;
+  color: black;
+  text-align: center;
+  font-size: 1rem;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  transition: 500ms;
+}
+
+.search-box:hover {
+  background: black;
+  color: white;
+  transform: translateY(-10px);
+}
+
+.search-icon {
+  margin: 0;
+  outline: 0;
+  padding: 16px 20px;
+  background: white;
+  border: none;
+  border-radius: 50px;
+  position: absolute;
+  top: 50px;
+  left: 360px;
+  transition: 500ms;
+}
+
+
+.search-icon img {
+  width: 16px;
+}
+
+.search-icon:hover {
+  transform: translateY(-10px);
+  background: black;
+}
+
+.search-icon {
+  margin: 0;
+  outline: 0;
+  padding: 18px 20px;
+  background: white;
+  border: none;
+  border-radius: 80%;
+  position: absolute;
+  top: 50px;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.weather-icon {
+  position: absolute;
+  top: 170px;
+  right: 135px;
+}
+
+.weather-icon img {
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8));
+  animation: glow 1.5s infinite alternate, move 5s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 0, 0.6));
+  }
+
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 0, 1));
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.weather-icon img:hover {
+  animation: spin 1s linear infinite;
+}
+
+.weather-icon::before {
+  content: '';
+  background: black;
+  width: 10px;
+  height: 180px;
+  position: absolute;
+  top: 0;
+  left: -120px;
+  border-radius: 20px;
+}
+
+.info0 h1 {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  font-size: 4rem;
+}
+
+.info0 p {
+  position: absolute;
+  top: 210px;
+  right: 0px;
+  white-space: nowrap;
+  font-size: 2rem;
+  font-weight: 500px;
+}
+
+.humidity img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 500px;
+  right: 340px;
+}
+
+.info-humidity h1 {
+  position: absolute;
+  top: 480px;
+  right: 290px;
+}
+
+.info-humidity p {
+  position: absolute;
+  top: 505px;
+  right: 260px;
+}
+
+.wind img {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 500px;
+  right: 120px;
+}
+
+.wind-info h1 {
+  position: absolute;
+  top: 480px;
+  right: 30px;
+}
+
+.wind-info p {
+  position: absolute;
+  top: 505px;
+  right: 15px;
+}
+
+/*box1*/
+
+.box3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+
+.date-time h1 {
+  position: absolute;
+  top: 30px;
+  left: 175px;
+  max-width: 100%;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: max-content;
+}
+
+.date-time h1::before {
+  content: '';
+  width: 100%;
+  background: black;
+  /*background: linear-gradient(to right, red, blue);*/
+  height: 10px;
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  border-radius: 100px;
+  transition: 200ms;
+}
+
+.date-time h1:hover::before {
+  width: 0;
+}
+
+.date-time h1:hover {
+  color: white;
+}
+
+.date-time h3 {
+  position: absolute;
+  top: 95px;
+  left: 180px;
+  white-space: nowrap;
+  font-weight: 500;
+  transition: 100ms;
+}
+
+.date-time h3:hover {
+  color: white;
+}
+
+.clock h3 {
+  position: absolute;
+  top: 125px;
+  left: 355px;
+  font-weight: 500;
+  transition: 100ms;
+}
+
+.clock h3:hover {
+  color: white;
+}
+
+.clock img {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  position: absolute;
+  top: 147px;
+  left: 325px;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
+
+.day-icon * {
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.day-icon h3 {
+  position: absolute;
+  /* Change to relative */
+  top: 360px;
+  left: 205px;
+  transition: 1.5s;
+}
+
+.day-icon h3::before {
+  content: '';
+  background: black;
+  height: 6px;
+  width: 380px;
+  border-radius: 10px;
+  position: absolute;
+  left: -180px;
+  bottom: -10px;
+}
+
+.day-icon h3:hover::before {
+  background: linear-gradient(to right, red, blue);
+}
+
+.day-icon img {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 115px;
+  top: 160px;
+}
+
+.date-time img {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+}
+
+.weather-metrics * {
+  font-weight: 400;
+}
+
+.rain-chance h3 {
+  position: absolute;
+  top: 420px;
+  left: 50px;
+}
+
+.rain-chance img {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  position: absolute;
+  top: 440px;
+  left: 10px;
+}
+
+.wind-dir h3 {
+  position: absolute;
+  top: 470px;
+  left: 50px;
+}
+
+.wind-dir img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 485px;
+  left: 15px;
+}
+
+.psi h3 {
+  position: absolute;
+  top: 520px;
+  left: 50px;
+}
+
+.psi img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 535px;
+  left: 10px;
+
+}
+
+.aqi h3 {
+  position: absolute;
+  top: 420px;
+  left: 280px;
+}
+
+.aqi img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 435px;
+  left: 240px;
+}
+
+.uv-index {
+  position: absolute;
+  top: 470px;
+  left: 280px;
+}
+
+.uv-index img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 15px;
+  left: -35px;
+}
+
+.visibility {
+  position: absolute;
+  top: 520px;
+  left: 280px;
+}
+
+.visibility img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20px;
+  left: -35px;
+}
+
+.box1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.moon-phase h2 {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  font-size: 1.6rem;
+}
+
+.moon-phase img {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  width: 120px;
+  /* Corrected width */
+  height: 120px;
+}
+
+.moon-info h3 {
+  font-family: "Poppins";
+  font-weight: 400;
+}
+
+.moon-name h2 {
+  position: absolute;
+  top: 30px;
+  right: 200px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.moon-name img {
+  position: absolute;
+  top: 70px;
+  left: 280px;
+  width: 120px;
+  /* Corrected width */
+  height: 120px;
+  animation: glow 1.5s infinite alternate, move 5s ease-in-out infinite;
+}
+
+.moon-name h2::after {
+  content: '';
+  width: 100%;
+  background: black;
+  height: 10px;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  border-radius: 100px;
+  transition: 200ms;
+}
+
+.moon-name h2:hover::after {
+  width: 0;
+}
+
+.moon-name h2:hover {
+  color: white;
+}
+
+.moon-age h3 {
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  font-weight: 400;
+}
+
+.moon-age img {
+  position: absolute;
+  top: 110px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.next-moon h3 {
+  position: absolute;
+  top: 120px;
+  left: 40px;
+}
+
+.next-moon img {
+  position: absolute;
+  top: 140px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.current-lunar h3 {
+  position: absolute;
+  top: 150px;
+  left: 40px;
+}
+
+
+
+.current-lunar img {
+  position: absolute;
+  top: 170px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+
+.left-card {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  top: 40px;
+  box-sizing: border-box;
+  /* Ensure padding is included in the width */
+}
+
+.hourly-forecast-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  /* Space between cards */
+  padding: 10px 0;
+  scrollbar-width: none;
+  /* Hide scrollbar in Firefox */
+  width: calc((100px + 10px) * 3 - 10px);
+  /* Adjust width to fit 3 cards including gaps */
+  box-sizing: border-box;
+  /* Ensure the width calculation is correct */
+  margin: 0 auto;
+  /* Center the container if it doesn’t take full width */
+}
+
+.hourly-forecast-slider::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar in Chrome, Safari, Opera */
+}
+
+.forecast-card {
+  flex: 0 0 auto;
+  width: 80px;
+  /* Width of each card */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  scroll-snap-align: center;
+  transition: transform 0.3s;
+}
+
+.forecast-card:hover {
+  transform: scale(1.1);
+}
+
+.forecast-card .time {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
+.forecast-card .temp {
+  font-size: 1.1em;
+  margin-top: 5px;
+}
+
+.forecast-card img {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.forecast-card .wind,
+.forecast-card .precipitation {
+  font-size: 0.8em;
+  margin-top: 3px;
+}
+
+.sunset-time * {
+  font-family: "Poppins";
+  font-weight: 400;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.sunrise h3 {
+  top: 60px;
+  left: 0px;
+}
+
+.sunrise h3::before {
+  content: '';
+  background: black;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  height: 6px;
+  width: 385px;
+  border-radius: 10px;
+}
+
+.sunrise h3:hover::before {
+  background: linear-gradient(to right, red, blue);
+}
+
+.sunset h3 {
+  top: 100px;
+  left: 0px;
+}
+
+.sun-logo img {
+  width: 150px;
+  height: 70px;
+  border-radius: 8px;
+  top: 75px;
+  right: -350px;
+}
+
+.sunrise img {
+  width: 30px;
+  height: 30px;
+  top: 75px;
+  left: -30px;
+}
+
+.sunset img {
+  width: 30px;
+  height: 30px;
+  top: 110px;
+  left: -30px;
+}
