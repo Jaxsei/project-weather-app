@@ -24,4 +24,7 @@ jobs:
     - name: Use API Key
       env:
         API_KEY: ${{ secrets.API_KEY }}
-      run: echo "Using the API key: $API_KEY"
+      run: |
+        # Replace this with a command that uses the API key securely
+        # For example, you can use the API key in a command like this
+        # curl -H "Authorization: Bearer $API_KEY" https://api.example.com
