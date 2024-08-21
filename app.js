@@ -1,4 +1,5 @@
-const apiKey = apiKey;
+require('dotenv').config();
+const apiKey = process.env.API_KEY;
 const searchBtn = document.getElementById("searchBtn");
 const currentDate = new Date();
 const weatherImg = document.getElementById("weatherImg");
