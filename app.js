@@ -1,4 +1,4 @@
-const apiKey = "bc9c852f44ab4ff98ee235609241308";
+const apiKey = apiKey;
 const searchBtn = document.getElementById("searchBtn");
 const currentDate = new Date();
 const weatherImg = document.getElementById("weatherImg");
