@@ -375,12 +375,19 @@ body {
 }
 
 .info0 p {
+ HEAD
     position: absolute;
     top: 210px;
     right: 0px;
     white-space: nowrap;
     font-size: 2rem;
     font-weight: 500px;
+
+  white-space: nowrap;
+  padding-top: 50px;
+  font-size: 2rem;
+  font-weight: 500px;
+ afc2170 (hello)
 }
 
 .humidity img {
@@ -426,15 +433,24 @@ body {
 /*box1*/
 
 .box3 {
+<<<<<<< HEAD
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
+=======
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+>>>>>>> afc2170 (hello)
 }
 
 
 .date-time h1 {
+<<<<<<< HEAD
     position: absolute;
     top: 30px;
     left: 175px;
@@ -456,6 +472,28 @@ body {
     bottom: -10px;
     border-radius: 100px;
     transition: 200ms;
+=======
+  padding-left: 170px;
+  position: relative;
+  padding-bottom: 20px;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: max-content;
+}
+
+.date-time h1::before {
+  content: '';
+  width: 250px;
+  background: black;
+  /*background: linear-gradient(to right, red, blue);*/
+  height: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  border-radius: 100px;
+  transition: 200ms;
+>>>>>>> afc2170 (hello)
 }
 
 .date-time h1:hover::before {
@@ -467,12 +505,21 @@ body {
 }
 
 .date-time h3 {
+<<<<<<< HEAD
     position: absolute;
     top: 95px;
     left: 180px;
     white-space: nowrap;
     font-weight: 500;
     transition: 100ms;
+=======
+  margin-bottom: 50px;
+  padding-bottom: 380px;
+  padding-left: 190px;
+  white-space: nowrap;
+  font-weight: 500;
+  transition: 100ms;
+>>>>>>> afc2170 (hello)
 }
 
 .date-time h3:hover {

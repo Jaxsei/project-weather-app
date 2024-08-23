@@ -1,3 +1,4 @@
+ HEAD
 // 1. Backend Code: Node.js - To handle server-side requests and API interaction
 require('dotenv').config();
 const axios = require('axios');
@@ -427,4 +428,4 @@ fadeButton.addEventListener('click', function() {
         content.classList.remove('fade-out');
         content.classList.add('fade-in');
     }, 500); // Match this with the duration of the fade-out
-});
+}
